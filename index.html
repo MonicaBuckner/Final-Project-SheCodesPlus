@@ -10,11 +10,40 @@
     <title>Weather</title>
 </head>
 <body>
-    <div class="container">
-    <h1>Weather App</h1>
-    <button type="button" class="btn btn-success">Success</button>
-
+<div class="container">
+ <div class="border">
+     <h1>Seattle, Washington, United States</h1>
+     <h3>Tuesday November 10, 2020 13:09</h3>
+     <form>
+        <input type="location" placeholder="Change location" autocomplete="off" autofocus="on" />
+        <input type="submit" />
+     </form>
+    <div class="row">
+     <div class="col-6">
+        <img src="https://ssl.gstatic.com/onebox/weather/64/rain.png" alt="Rain">
+        44 °F | °C
+     </div>
+     <div class="col-6">
+         <ul>
+             <li>
+               Precipitation: 44%  
+             </li>
+             <li>
+                Humidity: 90%
+             </li>
+             <li>
+                Wind: 3 mph
+             </li>
+         </ul>
+     </div>
     </div>
+    <footer>
+    <a href="https://laughing-swirles-f8bcc9.netlify.app/" target="_blank">Open-sourced code</a> 
+    by 
+    <a href="https://www.linkedin.com/in/monica-buckner/" target="_blank">Monica Buckner</a>
+    </footer>
+ </div>
+</div>
     <script src="src/index.js"></script>
 </body>
 </html>
