@@ -1,0 +1,1 @@
+alert ("Beginning the weather app!");
