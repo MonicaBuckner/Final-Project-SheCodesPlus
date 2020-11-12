@@ -1,3 +1,37 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #5e5d5e;
+}
 h1 {
-  color: blue;
+  font-size: 28px;
+  font-weight: 600;
+}
+form {
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  font-size: 16px;
+}
+footer {
+  text-align: center;
+}
+.perimeter {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 20px;
+  border: 1.5px solid #5e5d5e;
+  border-radius: 10px;
+}
+.top-of-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
 }
