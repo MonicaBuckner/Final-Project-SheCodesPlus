@@ -42,6 +42,9 @@ footer {
   justify-content: space-between;
   align-items: flex-end;
 }
+.weather-condition {
+  text-transform: capitalize;
+}
 .current-conditions strong {
   font-size: 38px;
 }

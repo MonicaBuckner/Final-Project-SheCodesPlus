@@ -10,12 +10,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 <title>Weather</title>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
 <div class="container">
  <div class="perimeter">
    <div class="top-of-page">
-     <h1>Seattle, Washington, United States</h1>
+     <h1 id="city-search-result">Seattle, Washington, United States</h1>
      <form>
         <input type="location" placeholder="Change location" autocomplete="off" autofocus="on" />
         <input type="submit" />
@@ -24,28 +26,33 @@
   <h3>
     Tuesday November 10, 2020 13:09
   </h3>
+  <h5 class="weather-condition" id="weather-condition">Rain</h5>
     <div class="row">
      <div class="col-6">
        <div class="clearfix current-conditions">
-        <img src="https://ssl.gstatic.com/onebox/weather/64/rain.png" alt="Rain" class="float-left">
+        <img src="https://ssl.gstatic.com/onebox/weather/64/rain.png" alt="Rain" class="float-left weather-image">
          <div class="float-left">
-            <strong>44</strong> 
+            <strong id="current-temp"></strong> 
             <span class="units"> 
                 °F | <a href="#"> °C</a>
             </span>
+            
         </div>
        </div>
     </div>
      <div class="col-6">
          <ul>
              <li>
-               Precipitation: 44%  
+               High: <span id="high-temp"></span>°
              </li>
              <li>
-                Humidity: 90%
+               Low: <span id="low-temp"></span>°
              </li>
              <li>
-                Wind: 3 mph
+                Humidity: <span id="humidity"></span>%
+             </li>
+             <li>
+                Windspeed: <span id="wind"></span> MPH
              </li>
          </ul>
      </div>
