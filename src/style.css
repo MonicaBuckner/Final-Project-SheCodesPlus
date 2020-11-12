@@ -1,14 +1,19 @@
 body {
   font-family: "Open Sans", sans-serif;
-  color: #5e5d5e;
+  color: whitesmoke;
 }
 h1 {
   font-size: 28px;
   font-weight: 600;
+  margin-bottom: 0;
 }
 form {
   line-height: 20px;
-  margin-bottom: 12px;
+  margin-bottom: 4px;
+}
+h3 {
+  font-size: 22px;
+  margin-bottom: 30px;
 }
 ul {
   margin: 0;
@@ -20,6 +25,7 @@ li {
 }
 footer {
   text-align: center;
+  color: #5e5d5e;
 }
 .perimeter {
   max-width: 900px;
@@ -28,10 +34,18 @@ footer {
   padding: 20px;
   border: 1.5px solid #5e5d5e;
   border-radius: 10px;
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
 }
 .top-of-page {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
+}
+.current-conditions strong {
+  font-size: 38px;
+}
+.current-conditions .units {
+  position: relative;
+  top: -18px;
 }
