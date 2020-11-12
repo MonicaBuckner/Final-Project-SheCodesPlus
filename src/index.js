@@ -49,6 +49,8 @@ function updatePage(response) {
     city.innerHTML = (response.data.name);
     let weatherCondition = document.querySelector("#weather-condition");
     weatherCondition.innerHTML = (response.data.weather[0].description);
+    let weatherIcon = document.querySelector("#weather-icon");
+    weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
     let highTemp = document.querySelector("#high-temp");
     highTemp.innerHTML = Math.round(response.data.main.temp_max);
     let lowTemp = document.querySelector("#low-temp");
