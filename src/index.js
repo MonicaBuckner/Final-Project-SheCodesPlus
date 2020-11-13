@@ -1,6 +1,3 @@
-let apiKey = "2c596f2ffa75a1e706f3d5b23375abfb"; 
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Seattle&appid=${apiKey}&units=imperial`;
-
 function updateDate() {
 let fullDate = document.querySelector("#full-date");
 let now = new Date();
@@ -61,4 +58,20 @@ function updatePage(response) {
     wind.innerHTML = Math.round(response.data.wind.speed);
     updateDate();
 }
+
+function identifyCity(city) {
+let apiKey = "2c596f2ffa75a1e706f3d5b23375abfb"; 
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 axios.get(apiUrl).then(updatePage);
+}
+
+function searchCityInput (event) {
+    event.preventDefault();
+    let searchInput = document.querySelector("#search-input");
+    identifyCity(searchInput.value);
+}
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", searchCityInput);
+
+

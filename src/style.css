@@ -45,6 +45,10 @@ footer {
 .weather-condition {
   text-transform: capitalize;
 }
+.weather-image {
+  display: block;
+  margin: 0 0 100;
+}
 .current-conditions strong {
   font-size: 38px;
 }
