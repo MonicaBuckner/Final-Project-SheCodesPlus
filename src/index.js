@@ -40,8 +40,9 @@ fullDate.innerHTML = `${day} ${month} ${date}, ${year} ${hours}:${minutes}`;
 }
 
 function updatePage(response) {
+    fahrenheitTemp = (response.data.main.temp);
     let temperature = document.querySelector("#current-temp")
-    temperature.innerHTML = Math.round(response.data.main.temp);
+    temperature.innerHTML = Math.round(fahrenheitTemp);
     let city = document.querySelector("#city-search-result");
     city.innerHTML = (response.data.name);
     let weatherCondition = document.querySelector("#weather-condition");
@@ -71,7 +72,29 @@ function searchCityInput (event) {
     identifyCity(searchInput.value);
 }
 
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCityInput);
 
+function convertTemp (event) {
+    event.preventDefault();
+    let celciusConversion = (fahrenheitTemp - 32) * 5 / 9; 
+    let celciusTemp = document.querySelector("#current-temp");
+    celciusTemp.innerHTML = Math.round(celciusConversion);
+}
 
+function revertTemp(event) {
+    event.preventDefault();
+    let fahrenheitConversion = document.querySelector("#current-temp");
+    fahrenheitConversion.innerHTML = Math.round(fahrenheitTemp);
+}
+
+let celcius = document.querySelector("#celcius");
+celcius.addEventListener("click", convertTemp);
+
+let fahrenheitTemp = null; 
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", revertTemp);
+
+identifyCity(`Seattle`);
