@@ -55,8 +55,9 @@ function updatePage(response) {
     lowTemp.innerHTML = Math.round(response.data.main.temp_min);
     let humidity = document.querySelector("#humidity");
     humidity.innerHTML = (response.data.main.humidity);
+    windSpeed = (response.data.wind.speed);
     let wind = document.querySelector("#wind");
-    wind.innerHTML = Math.round(response.data.wind.speed);
+    wind.innerHTML = Math.round(windSpeed);
     updateDate();
 }
 
@@ -76,25 +77,47 @@ function searchCityInput (event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCityInput);
 
-function convertTemp (event) {
+function convertToMetric (event) {
     event.preventDefault();
+    fahrenheit.classList.remove("active");
+    celcius.classList.add("active");
     let celciusConversion = (fahrenheitTemp - 32) * 5 / 9; 
     let celciusTemp = document.querySelector("#current-temp");
     celciusTemp.innerHTML = Math.round(celciusConversion);
+    mph.classList.remove("active");
+    kph.classList.add("active");
+    let kmetersConversion = windSpeed * 1.609;
+    let kmetersPerHour = document.querySelector("#wind");
+    kmetersPerHour.innerHTML = Math.round(kmetersConversion);
 }
 
-function revertTemp(event) {
+function revertToImperial(event) {
     event.preventDefault();
+    celcius.classList.remove("active");
+    fahrenheit.classList.add("active");
     let fahrenheitConversion = document.querySelector("#current-temp");
     fahrenheitConversion.innerHTML = Math.round(fahrenheitTemp);
+    mph.classList.add("active");
+    kph.classList.remove("active");
+    let mphConversion = document.querySelector("#wind");
+    mphConversion.innerHTML = Math.round(windSpeed);
 }
 
-let celcius = document.querySelector("#celcius");
-celcius.addEventListener("click", convertTemp);
-
 let fahrenheitTemp = null; 
+let windSpeed = null;
+
+let celcius = document.querySelector("#celcius");
+celcius.addEventListener("click", convertToMetric);
 
 let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", revertTemp);
+fahrenheit.addEventListener("click", revertToImperial);
+
+let kph = document.querySelector("#kph");
+kph.addEventListener("click", convertToMetric);
+
+let mph = document.querySelector("#mph");
+mph.addEventListener("click", revertToImperial);
+
+
 
 identifyCity(`Seattle`);

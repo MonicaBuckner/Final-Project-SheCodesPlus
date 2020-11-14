@@ -56,3 +56,10 @@ footer {
   position: relative;
   top: -18px;
 }
+
+.units .active {
+  color: whitesmoke;
+  cursor: default;
+  text-decoration: none;
+  font-size: 18px;
+}
