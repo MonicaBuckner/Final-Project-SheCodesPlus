@@ -28,15 +28,19 @@ let monthsOfYear = [
   `December`
 ];
 let month = monthsOfYear[now.getMonth()];
-let hours = now.getHours();
-    if (hours < 10) {
-     hours = `0${hours}`;
-    }
 let minutes = now.getMinutes();
     if (minutes < 10) {
      minutes = `0${minutes}`;
     }
-fullDate.innerHTML = `${day} ${month} ${date}, ${year} ${hours}:${minutes}`;
+let hours = now.getHours();
+    if (hours < 10) {
+     hours = `0${hours}`;
+    }
+    if (hours > 11) {
+     fullDate.innerHTML = `${day} ${month} ${date}, ${year} ${hours}:${minutes} PM`;
+    } else {
+    fullDate.innerHTML = `${day} ${month} ${date}, ${year} ${hours}:${minutes} AM`;
+    }
 }
 
 function updatePage(response) {
