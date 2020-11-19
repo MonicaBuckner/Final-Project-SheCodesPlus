@@ -67,7 +67,7 @@ function updatePage(response) {
 
 function identifyCity(city) {
 let apiKey = "2c596f2ffa75a1e706f3d5b23375abfb"; 
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 axios.get(apiUrl).then(updatePage);
 }
 
